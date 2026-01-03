@@ -1,44 +1,17 @@
 # GRUPI-19
-aurora
-bliarta atien blerta aurora
-# Projekt Loje – Version Bazë (C++)
+# Branch: Bliarta
 
-## Përshkrimi
-Ky projekt paraqet një version bazë të një loje të thjeshtë të zhvilluar në gjuhën programuese **C++**. Qëllimi i projektit është të demonstrojë përdorimin e klasave, objekteve dhe funksioneve bazë në C++.
+Ky branch përmban disa përmirësime të lojës së numrit rastësor për të rritur interaktivitetin dhe përvojën e lojtarit. Ndryshimet kryesore janë si më poshtë:
 
-## Funksionalitetet
-- Krijimi i klasës **Player**
-- Ruajtja e emrit dhe pikëve të lojtarit
-- Rritja e pikëve përmes një funksioni
-- Shfaqja e informacionit bazë të lojës në ekran
+1. **Zgjerimi i intervalit të numrit të rastësishëm (nga 1-5 në 1-10)**  
+   - Lojtarët tani duhet të gjejnë një numër midis 1 dhe 10, jo më vetëm 1-5.  
+   - Kjo e bën lojën më sfiduese dhe kërkon më shumë përqendrim nga përdoruesi.  
+   - Ndryshimi është bërë vetëm në gjenerimin e numrit (`rand() % 10 + 1`) dhe në mesazhet e input-it për përdoruesin.  
+   - Funksionalitetet tjera, si klasa `Player` dhe sistemi i pikëve, nuk janë prekur.
 
-## Struktura e Kodit
-- **Player class**: Përmban emrin e lojtarit dhe pikët
-- **increaseScore()**: Funksion për rritjen e pikëve
-- **main()**: Inicializon lojtarin dhe ekzekuton logjikën bazë të lojës
+2. **Shtimi i shfaqjes së tentativave të përdorura**  
+   - Kur lojtari gjen numrin e saktë, programi tregon sa tentativa janë përdorur për të arritur rezultatin.  
+   - Ky përmirësim ndihmon lojtarin të kuptojë më mirë performancën e tij dhe i jep feedback të menjëhershëm.  
+   - Ndryshimi është bërë duke shtuar një variabël `attemptsUsed` dhe një mesazh informues pas gjetjes së numrit të saktë.  
+   - Të tjerat në lojë, përfshirë sistemin e pikëve dhe rrjedhën e përgjithshme të lojës, mbeten të pandryshuara.
 
-## Teknologjitë e përdorura
-- Gjuha programuese: **C++**
-- Libraritë: `<iostream>`, `<string>`
-
-## Autori
-Aurora Krasniqi
-
-## Shënime
-Ky projekt është version fillestar dhe mund të zgjerohet më tej me nivele, më shumë lojtarë dhe logjikë më të avancuar loje.
-
-Ky është një projekt lojë i thjeshtë i shkruar në C++, ku përdoruesi duhet të gjejë një numër të gjeneruar rastësisht. Loja përfshin disa tentativa dhe opsion për të luajtur përsëri.
-Përdoruesi shkruan emrin e tij.
-
-Numri sekret gjenerohet rastësisht nga 1 deri në 10.
-
-Lojtari ka 3 tentativa për çdo raund.
-
-Nëse gjen numrin, fiton pikë dhe loja e tregon mesazhin e suksesit.
-
-Pas përfundimit të raundit, përdoruesi pyetet nëse dëshiron të luajë përsëri.
-
-Pikët mbeten të grumbulluara gjatë sesionit të lojës.
-
-Atien Mati.
- main
