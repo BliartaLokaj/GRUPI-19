@@ -27,37 +27,47 @@ int main() {
 
     Player player1(playerName);
 
-    srand(time(0));
+    srand(time(0)); // inicializimi i numrave te rastesishem
 
-    cout << "\nLoja ka filluar nga " << player1.name << endl;
+    char playAgain;
 
-    int secretNumber = rand() % 10 + 1;  // 1 - 10
-    int guess;
-    int attempts = 3;
-    bool guessed = false;
+    do {
+        cout << "\nLoja ka filluar nga " << player1.name << endl;
 
-    while (attempts > 0) {
-        cout << "Gjeje numrin (1 - 10). Tentativa te mbetura: "
-             << attempts << " : ";
-        cin >> guess;
+        int secretNumber = rand() % 10 + 1;  // 1 - 10
+        int guess;
+        int attempts = 3;
+        bool guessed = false;
 
-        if (guess == secretNumber) {
-            cout << "Urime! E gjetet numrin e sakte 🎉" << endl;
-            player1.increaseScore();
-            guessed = true;
-            break;
-        } else {
-            cout << "Gabim!" << endl;
-            attempts--;
+        while (attempts > 0) {
+            cout << "Gjeje numrin (1 - 10). Tentativa te mbetura: "
+                 << attempts << " : ";
+            cin >> guess;
+
+            if (guess == secretNumber) {
+                cout << "Urime! E gjetet numrin e sakte 🎉" << endl;
+                player1.increaseScore();
+                guessed = true;
+                break;
+            } else {
+                cout << "Gabim!" << endl;
+                attempts--;
+            }
         }
-    }
 
-    if (!guessed) {
-        cout << "Numri i sakte ishte: " << secretNumber << endl;
-    }
+        if (!guessed) {
+            cout << "Numri i sakte ishte: " << secretNumber << endl;
+        }
 
-    cout << "\nPiket aktuale te " << player1.name
-         << ": " << player1.score << endl;
+        cout << "\nPiket aktuale te " << player1.name
+             << ": " << player1.score << endl;
+
+        cout << "\nDeshironi ta luani perseri? (y/n): ";
+        cin >> playAgain;
+
+    } while (playAgain == 'y' || playAgain == 'Y');
+
+    cout << "\nFaleminderit per lojen!" << endl;
 
     return 0;
 }
