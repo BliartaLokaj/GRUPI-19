@@ -33,3 +33,4 @@ int main() {
     cout << "Piket aktuale: " << player1.score << endl;
 
     return 0;
+}
