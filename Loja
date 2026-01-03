@@ -1,0 +1,36 @@
+//Initial commit: create basic game and player structure
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Autor: Aurora
+// Projekt loje – version bazë
+
+class Player {
+public:
+    string name;
+    int score;
+
+    Player(string n) {
+        name = n;
+        score = 0;
+    }
+
+    void increaseScore() {
+        score++;
+    }
+};
+
+int main() {
+    Player player1("Player 1");
+
+    cout << "Loja ka filluar nga " << player1.name << endl;
+
+    // logjikë bazë e lojës
+    player1.increaseScore();
+
+    cout << "Piket aktuale: " << player1.score << endl;
+
+    return 0;
+}
