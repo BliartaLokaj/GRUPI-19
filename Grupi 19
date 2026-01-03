@@ -4,8 +4,8 @@
 
 using namespace std;
 
-// Author: Aurora
-// Simple game project
+// Autor: Aurora
+// Projekt loje – version bazë
 
 class Player {
 public:
@@ -25,12 +25,12 @@ public:
 int main() {
     Player player1("Player 1");
 
-    cout << "Game started by " << player1.name << endl;
+    cout << "Loja ka filluar nga " << player1.name << endl;
 
-    // simple game logic
+    // logjikë bazë e lojës
     player1.increaseScore();
 
-    cout << "Current score: " << player1.score << endl;
+    cout << "Piket aktuale: " << player1.score << endl;
 
     return 0;
 }
