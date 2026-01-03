@@ -1,0 +1,82 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+class Player {
+public:
+    string name;
+    int score;
+
+    Player(string n) {
+        name = n;
+        score = 0;
+    }
+
+    void increaseScore() {
+        score++;
+    }
+};
+
+int main() {
+    string playerName;
+    cout << "Shkruaj emrin e lojtarit: ";
+    getline(cin, playerName);
+
+    Player player1(playerName);
+
+    srand(time(0)); // inicializimi i numrave te rastesishem
+
+    char playAgain;
+
+    do {
+        cout << "\nLoja ka filluar nga " << player1.name << endl;
+
+        int secretNumber = rand() % 10 + 1;  // 1 - 10
+        int guess;
+        int attempts = 3;
+        int attemptsUsed = 0;   // 🔹 SHTESA E RE
+        bool guessed = false;
+
+        while (attempts > 0) {
+            cout << "Gjeje numrin (1 - 10). Tentativa te mbetura: "
+                 << attempts << " : ";
+            cin >> guess;
+
+            if (guess < 1 || guess > 10) {
+                cout << "Ju lutem shkruani nje numer midis 1 dhe 10." << endl;
+                continue;
+            }
+
+            attempts--;
+            attemptsUsed++;   // 🔹 numëron tentativat e përdorura
+
+            if (guess == secretNumber) {
+                cout << "Urime! E gjetet numrin e sakte 🎉" << endl;
+                cout << "E gjetet pas " << attemptsUsed << " tentativash." << endl;
+                player1.increaseScore();
+                guessed = true;
+                break;
+            } else {
+                cout << "Gabim!" << endl;
+            }
+        }
+
+        if (!guessed) {
+            cout << "Numri i sakte ishte: " << secretNumber << endl;
+        }
+
+        cout << "\nPiket aktuale te " << player1.name
+             << ": " << player1.score << endl;
+
+        cout << "\nDeshironi ta luani perseri? (y/n): ";
+        cin >> playAgain;
+
+    } while (playAgain == 'y' || playAgain == 'Y');
+
+    cout << "\nFaleminderit per lojen!" << endl;
+
+    return 0;
+}
